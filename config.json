@@ -1,11 +1,11 @@
 {
-  "readmeUrl": "https://github.com/sankumsek/sankumsek.bio/blob/main/README.md",
+  "readmeUrl": "https://raw.githubusercontent.com/sankumsek/sankumsek.bio/main/README.md",
   "title": "Personal Site",
   "name": "Sanjeev Sekar",
   "ascii": "Sanjeev Sekar",
   "social": {
     "github": "https://github.com/sankumsek",
-    "linkedin": "linkedin"
+    "linkedin": "https://www.linkedin.com/in/sanjeevsekar"
   },
   "email": "sankumsek@gmail.com",
   "ps1_hostname": "sankumsek.bio",
@@ -13,8 +13,7 @@
   "repo": "https://github.com/sankumsek/sankumsek.bio",
   "resume_url": "https://docs.google.com/document/d/1i5naUuZ5RKSg9Tclx1IHpd-bQOkL5a3w0i0nVdVLwAg/edit?usp=sharing",
   "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
+    "givewell": "https://www.givewell.org/"
   },
   "colors": {
     "light": {
