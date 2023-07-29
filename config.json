@@ -1,16 +1,16 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
+  "readmeUrl": "https://github.com/sankumsek/sankumsek.bio/blob/main/README.md",
+  "title": "Personal Site",
+  "name": "Sanjeev Sekar",
+  "ascii": "Test",
   "social": {
-    "github": "github",
+    "github": "https://github.com/sankumsek",
     "linkedin": "linkedin"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
+  "email": "sankumsek@gmail.com",
+  "ps1_hostname": "sankumsek.bio",
   "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
+  "repo": "https://github.com/sankumsek/sankumsek.bio",
   "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
   "donate_urls": {
     "paypal": "https://paypal.me/cveinnt",
@@ -18,8 +18,8 @@
   },
   "colors": {
     "light": {
-      "background": "#FBF1C9",
-      "foreground": "#3C3836",
+      "background": "#FBFCF8",
+      "foreground": "#000000",
       "yellow": "#D79921",
       "green": "#98971A",
       "gray": "#7C6F64",
