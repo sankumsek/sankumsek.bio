@@ -12,6 +12,14 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6K2QL237Q"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-G6K2QL237Q');
+        </script>
       <script async src="https://analytics.umami.is/script.js" data-website-id="df9d7e4e-4648-4ccf-8ea4-1548d32bd338"></script>
         <meta
           name="viewport"
