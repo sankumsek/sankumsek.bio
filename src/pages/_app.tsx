@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/global.css';
 import Head from 'next/head';
+import Script from 'next/script';
 
 const App = ({ Component, pageProps }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -12,15 +13,19 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6K2QL237Q"></script>
-        <script>
+
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-G6K2QL237Q" />
+      <Script id="google-analytics">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
+ 
           gtag('config', 'G-G6K2QL237Q');
-        </script>
-      <script async src="https://analytics.umami.is/script.js" data-website-id="df9d7e4e-4648-4ccf-8ea4-1548d32bd338"></script>
+        `}
+      </Script>
+
+      <Script async src="https://analytics.umami.is/script.js" data-website-id="df9d7e4e-4648-4ccf-8ea4-1548d32bd338"></Script>
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width"
