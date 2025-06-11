@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/global.css';
 import Head from 'next/head';
 import Script from 'next/script';
+import { Analytics } from "@vercel/analytics/next";
 
 const App = ({ Component, pageProps }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
