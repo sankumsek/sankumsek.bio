@@ -14,7 +14,7 @@ export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
               <Ps1 />
             </div>
 
-            <div className="flex-grow">{entry.command}</div>
+            <div className="flex-grow" id="wrote-something" data-umami-event="wrote-something">{entry.command}</div>
           </div>
 
           <p
