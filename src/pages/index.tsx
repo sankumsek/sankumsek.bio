@@ -5,6 +5,9 @@ import { Input } from '../components/input';
 import { useHistory } from '../components/history/hook';
 import { History } from '../components/history/History';
 import { banner } from '../utils/bin';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 interface IndexPageProps {
   inputRef: React.MutableRefObject<HTMLInputElement>;
@@ -56,6 +59,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
             setLastCommandIndex={setLastCommandIndex}
             clearHistory={clearHistory}
           />
+          < Analytics />
+          < SpeedInsights />
         </div>
       </div>
     </>
