@@ -99,6 +99,8 @@ export const Input = ({
         onKeyDown={onSubmit}
         autoComplete="off"
         spellCheck="false"
+        data-umami-event="User entry"
+        data-umami-event-text={command}
       />
     </div>
   );
