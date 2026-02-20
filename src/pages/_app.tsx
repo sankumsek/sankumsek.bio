@@ -16,8 +16,6 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-
-      <script async src="https://analytics.umami.is/script.js" data-website-id="df9d7e4e-4648-4ccf-8ea4-1548d32bd338"></script>
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width"
@@ -25,18 +23,24 @@ const App = ({ Component, pageProps }) => {
           maximum-scale="1"
         />
       </Head>
-      <div className="container">
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-G6K2QL237Q" />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-  
-            gtag('config', 'G-G6K2QL237Q');
-          `}
-        </Script>
-    </div>
+      
+      <Script
+        async
+        src="https://analytics.umami.is/script.js"
+        data-website-id="df9d7e4e-4648-4ccf-8ea4-1548d32bd338"
+        strategy="afterInteractive"
+      />
+      
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-G6K2QL237Q" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-G6K2QL237Q');
+        `}
+      </Script>
       <div
         className="text-light-foreground dark:text-dark-foreground min-w-max text-xs md:min-w-full md:text-base"
         onClick={onClickAnywhere}
