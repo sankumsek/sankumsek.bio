@@ -40,6 +40,12 @@ export const Input = ({
     if (event.key === 'Enter' || event.code === '13') {
       event.preventDefault();
       setLastCommandIndex(0);
+      
+      // Track command submission with Umami
+      if (command.trim() && typeof window !== 'undefined' && (window as any).umami) {
+        (window as any).umami.track('command-entered', { command: command.trim() });
+      }
+      
       await shell(command, setHistory, clearHistory, setCommand);
       containerRef.current.scrollTo(0, containerRef.current.scrollHeight);
     }
@@ -99,8 +105,6 @@ export const Input = ({
         onKeyDown={onSubmit}
         autoComplete="off"
         spellCheck="false"
-        data-umami-event="User entry"
-        data-umami-event-text={command}
       />
     </div>
   );
