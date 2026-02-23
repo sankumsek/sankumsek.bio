@@ -8,7 +8,7 @@ import PortableText from '@/components/PortableText';
 import type { Post } from '@/types';
 
 interface PostPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 /**
@@ -23,7 +23,7 @@ interface PostPageProps {
  * Validates Requirements 8.1, 8.4
  */
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
 
   try {
     // Fetch post data for metadata
@@ -114,7 +114,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
  * Validates Requirements 4.1, 6.1, 6.2, 10.1, 10.2
  */
 export default async function PostPage({ params }: PostPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   try {
     // Fetch post by slug

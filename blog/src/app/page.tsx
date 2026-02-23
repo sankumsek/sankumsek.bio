@@ -6,7 +6,7 @@ import type { Post } from '@/types';
 const POSTS_PER_PAGE = 10;
 
 interface HomePageProps {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }
 
 /**
@@ -18,8 +18,11 @@ interface HomePageProps {
  * Validates Requirements 5.1, 5.2, 5.3, 5.5, 10.2
  */
 export default async function HomePage({ searchParams }: HomePageProps) {
+  // Await searchParams in Next.js 15
+  const params = await searchParams;
+  
   // Parse page number from query params, default to 1
-  const currentPage = Math.max(1, parseInt(searchParams.page || '1', 10));
+  const currentPage = Math.max(1, parseInt(params.page || '1', 10));
   
   // Calculate pagination range
   const start = (currentPage - 1) * POSTS_PER_PAGE;
