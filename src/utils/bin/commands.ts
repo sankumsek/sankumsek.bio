@@ -43,6 +43,12 @@ export const resume = async (args: string[]): Promise<string> => {
   return 'Opening resume...';
 };
 
+// Blog
+export const blog = async (args: string[]): Promise<string> => {
+  window.open('https://blog.sankumsek.bio', '_blank');
+  return 'Opening blog...';
+};
+
 // Donate
 export const donate = async (args: string[]): Promise<string> => {
   return `thank you for your interest. 

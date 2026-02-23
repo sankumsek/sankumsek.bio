@@ -1,12 +1,9 @@
 {
-  "github": {
-    "silent": true
-  },
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
   "env": {
-    "NEXT_PUBLIC_SITE_URL": "https://sankumsek.bio"
+    "NEXT_PUBLIC_SITE_URL": "https://blog.sankumsek.bio"
   }
 }
