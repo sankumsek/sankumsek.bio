@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PortableText as PortableTextReact } from '@portabletext/react';
 import Image from 'next/image';
-import DOMPurify from 'dompurify';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 // Import additional language support
@@ -21,6 +20,16 @@ import type { PortableTextBlock } from '@/types';
 interface PortableTextProps {
   content: PortableTextBlock[];
 }
+
+// Simple text sanitization function
+const sanitizeText = (text: string): string => {
+  return text
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+};
 
 // Custom serializers for different block types
 const components = {
@@ -56,17 +65,11 @@ const components = {
       const language = value.language || 'javascript';
       const code = value.code || '';
 
-      // Sanitize code to prevent XSS
-      const sanitizedCode = DOMPurify.sanitize(code, {
-        ALLOWED_TAGS: [],
-        ALLOWED_ATTR: [],
-      });
-
       return (
         <div className="my-6">
           <pre className={`language-${language} rounded-lg overflow-x-auto`}>
             <code className={`language-${language}`}>
-              {sanitizedCode}
+              {code}
             </code>
           </pre>
         </div>
@@ -118,18 +121,13 @@ const components = {
       </code>
     ),
     link: ({ value, children }: any) => {
-      const target = value?.href?.startsWith('http') ? '_blank' : undefined;
+      const href = value?.href || '#';
+      const target = href.startsWith('http') ? '_blank' : undefined;
       const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
-
-      // Sanitize href to prevent XSS
-      const sanitizedHref = DOMPurify.sanitize(value?.href || '#', {
-        ALLOWED_TAGS: [],
-        ALLOWED_ATTR: [],
-      });
 
       return (
         <a
-          href={sanitizedHref}
+          href={href}
           target={target}
           rel={rel}
           className="text-blue-600 hover:text-blue-800 underline"
@@ -142,40 +140,19 @@ const components = {
 };
 
 export default function PortableText({ content }: PortableTextProps) {
+  const [mounted, setMounted] = useState(false);
+
   // Apply syntax highlighting after component mounts
   useEffect(() => {
-    Prism.highlightAll();
-  }, [content]);
-
-  // Sanitize the entire content structure to prevent XSS
-  const sanitizedContent = React.useMemo(() => {
-    return content.map((block) => {
-      // Create a deep copy to avoid mutating original
-      const sanitizedBlock = { ...block };
-
-      // Sanitize text content in blocks
-      if (sanitizedBlock._type === 'block' && Array.isArray(sanitizedBlock.children)) {
-        sanitizedBlock.children = sanitizedBlock.children.map((child: any) => {
-          if (child.text) {
-            return {
-              ...child,
-              text: DOMPurify.sanitize(child.text, {
-                ALLOWED_TAGS: [],
-                ALLOWED_ATTR: [],
-              }),
-            };
-          }
-          return child;
-        });
-      }
-
-      return sanitizedBlock;
-    });
-  }, [content]);
+    setMounted(true);
+    if (mounted) {
+      Prism.highlightAll();
+    }
+  }, [content, mounted]);
 
   return (
-    <div className="max-w-none">
-      <PortableTextReact value={sanitizedContent} components={components} />
+    <div className="max-w-none prose prose-lg">
+      <PortableTextReact value={content} components={components} />
     </div>
   );
 }
