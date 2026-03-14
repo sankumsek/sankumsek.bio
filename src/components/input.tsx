@@ -14,6 +14,7 @@ export const Input = ({
   setHistory,
   setLastCommandIndex,
   clearHistory,
+  disabled = false,
 }) => {
   const onSubmit = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     const commands: [string] = history
@@ -105,6 +106,7 @@ export const Input = ({
         onKeyDown={onSubmit}
         autoComplete="off"
         spellCheck="false"
+        disabled={disabled}
       />
     </div>
   );
