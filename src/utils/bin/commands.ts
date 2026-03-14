@@ -154,8 +154,9 @@ export const banner = (args?: string[]): string => {
   ░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗
   ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝
 
-Type 'help' to see the list of available commands.
-Type 'sumfetch' to display summary.
-Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
+Welcome! I'm an Engineering Manager at AWS Labs, focused on Growth & AI.
+
+Type 'resume' to view my experience, or 'linkedin' to connect.
+Type 'help' for more commands.
 `;
 };
