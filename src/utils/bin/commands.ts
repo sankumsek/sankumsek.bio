@@ -22,12 +22,6 @@ Type 'sumfetch' to display summary.
 `;
 };
 
-// Redirection
-export const repo = async (args: string[]): Promise<string> => {
-  window.open(`${config.repo}`);
-  return 'Opening Github repository...';
-};
-
 // About
 export const about = async (args: string[]): Promise<string> => {
   return `Hi, I am ${config.name}. 
@@ -47,14 +41,6 @@ export const resume = async (args: string[]): Promise<string> => {
 export const blog = async (args: string[]): Promise<string> => {
   window.open('https://blog.sankumsek.bio', '_blank');
   return 'Opening blog...';
-};
-
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.givewell}" target="_blank">Givewell</a></u>
-`;
 };
 
 // Contact
@@ -95,10 +81,6 @@ directories`;
 export const cd = async (args: string[]): Promise<string> => {
   return `unfortunately, i cannot afford more directories.
 if you want to help, you can type 'donate'.`;
-};
-
-export const date = async (args: string[]): Promise<string> => {
-  return new Date().toString();
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
