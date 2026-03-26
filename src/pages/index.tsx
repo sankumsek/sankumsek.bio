@@ -5,8 +5,6 @@ import { Input } from '../components/input';
 import { useHistory } from '../components/history/hook';
 import { History } from '../components/history/History';
 import { banner, sumfetch } from '../utils/bin';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 interface IndexPageProps {
@@ -79,6 +77,52 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     <>
       <Head>
         <title>{config.title}</title>
+        <meta
+          name="description"
+          content="Sanjeev Sekar — Engineering Manager at AWS Labs focused on Growth & AI. Personal terminal-style site with resume, projects, and blog."
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sankumsek.bio" />
+        <meta property="og:title" content="Sanjeev Sekar | Engineering Manager, AWS Labs" />
+        <meta
+          property="og:description"
+          content="Engineering Manager at AWS Labs focused on Growth & AI. Explore my resume, projects, and blog."
+        />
+        <meta property="og:image" content="https://sankumsek.bio/apple-icon-180x180.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Sanjeev Sekar | Engineering Manager, AWS Labs" />
+        <meta
+          name="twitter:description"
+          content="Engineering Manager at AWS Labs focused on Growth & AI. Explore my resume, projects, and blog."
+        />
+        <meta name="twitter:image" content="https://sankumsek.bio/apple-icon-180x180.png" />
+
+        {/* JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Sanjeev Sekar',
+              url: 'https://sankumsek.bio',
+              email: config.email,
+              jobTitle: 'Engineering Manager',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'AWS Labs',
+              },
+              sameAs: [
+                `https://github.com/${config.social.github}`,
+                `https://www.linkedin.com/in/${config.social.linkedin}`,
+              ],
+            }),
+          }}
+        />
       </Head>
 
       <div className="p-8 overflow-hidden h-full border-2 rounded border-light-yellow dark:border-dark-yellow">
@@ -97,8 +141,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
             clearHistory={clearHistory}
             disabled={isAutoTyping}
           />
-          < Analytics />
-          < SpeedInsights />
         </div>
       </div>
     </>
