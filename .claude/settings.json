@@ -4,5 +4,9 @@
     "GIT_AUTHOR_EMAIL": "sankumsek@gmail.com",
     "GIT_COMMITTER_NAME": "Sanjeev Sekar",
     "GIT_COMMITTER_EMAIL": "sankumsek@gmail.com"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   }
 }
