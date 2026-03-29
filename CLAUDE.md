@@ -182,3 +182,14 @@ Deployments trigger automatically on push to `master`. See `DEPLOYMENT.md` for f
 - **Pre-commit hooks:** Husky is configured (`prepare` script runs `husky install`).
 - **HTML in command output:** Commands can return HTML strings with `<a>`, `<u>` tags for links. Use Tailwind color classes `text-light-blue dark:text-dark-blue underline` for styled links.
 - **Package managers:** Root = yarn, blog/studio = npm. Do not mix.
+
+## Blog Writing Style
+
+- **Tone & Voice:** "Conversational, witty, yet professional. Use simple language that sounds like a 6th grader could read it.
+- **Content Rules:** 1500-2000 words, use H2 and H3, max 3 to 5 sentence paragraphs.
+- **Banned Words/Symbol:s** No em-dashes
+- **Inspiration**: Use the following writers and their respective websites for inspiration when your writing:
+  - Steve Yegge: https://steve-yegge.medium.com/
+  - Will Larson: https://lethain.com/
+  - Anton: https://www.manager.dev/blog
+  - Gergely Orosz: https://newsletter.pragmaticengineer.com/
