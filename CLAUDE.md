@@ -187,7 +187,7 @@ Deployments trigger automatically on push to `master`. See `DEPLOYMENT.md` for f
 
 - **Tone & Voice:** "Conversational, witty, yet professional. Use simple language that sounds like a 6th grader could read it.
 - **Content Rules:** 1500-2000 words, use H2 and H3, max 3 to 5 sentence paragraphs.
-- **Banned Words/Symbol:s** No em-dashes
+- **Banned Words/Symbols:** No em-dashes, Additionally, (especially beginning a sentence) align with, boasts, bolstered,crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (as a verb), interplay, intricate/intricacies, key (as an adjective),landscape (as an abstract noun), meticulous/meticulously, pivotal, showcase, tapestry (as an abstract noun), testament, underscore (as a verb), valuable, vibrant
 - **Inspiration**: Use the following writers and their respective websites for inspiration when your writing:
   - Steve Yegge: https://steve-yegge.medium.com/
   - Will Larson: https://lethain.com/
