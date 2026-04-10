@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -46,6 +47,12 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>
+      <Script
+        async
+        src="https://analytics.umami.is/script.js"
+        data-website-id="df9d7e4e-4648-4ccf-8ea4-1548d32bd338"
+        strategy="afterInteractive"
+      />
     </html>
   )
 }
