@@ -84,6 +84,9 @@ export default function PostList({ posts, currentPage, totalPages }: PostListPro
             } transition-colors`}
             aria-disabled={currentPage <= 1}
             onClick={(e) => currentPage <= 1 && e.preventDefault()}
+            data-umami-event="pagination"
+            data-umami-event-direction="previous"
+            data-umami-event-page={String(currentPage - 1)}
           >
             Previous
           </a>
@@ -113,6 +116,8 @@ export default function PostList({ posts, currentPage, totalPages }: PostListPro
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   } transition-colors`}
                   aria-current={pageNum === currentPage ? 'page' : undefined}
+                  data-umami-event="pagination"
+                  data-umami-event-page={String(pageNum)}
                 >
                   {pageNum}
                 </a>
@@ -130,6 +135,9 @@ export default function PostList({ posts, currentPage, totalPages }: PostListPro
             } transition-colors`}
             aria-disabled={currentPage >= totalPages}
             onClick={(e) => currentPage >= totalPages && e.preventDefault()}
+            data-umami-event="pagination"
+            data-umami-event-direction="next"
+            data-umami-event-page={String(currentPage + 1)}
           >
             Next
           </a>

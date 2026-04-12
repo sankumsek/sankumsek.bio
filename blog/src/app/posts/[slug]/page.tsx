@@ -5,6 +5,7 @@ import { client } from '@/lib/sanity.client';
 import { postBySlugQuery } from '@/lib/sanity.queries';
 import { urlFor } from '@/lib/sanity.image';
 import PortableText from '@/components/PortableText';
+import PostAnalytics from '@/components/PostAnalytics';
 import type { Post } from '@/types';
 
 interface PostPageProps {
@@ -173,6 +174,12 @@ export default async function PostPage({ params }: PostPageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
+        <PostAnalytics
+          title={post.title}
+          slug={slug}
+          categories={post.categories?.map((c) => c.title) ?? []}
         />
         
         <article className="min-h-screen">

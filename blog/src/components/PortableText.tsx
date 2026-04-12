@@ -125,12 +125,18 @@ const components = {
       const target = href.startsWith('http') ? '_blank' : undefined;
       const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
 
+      const isExternal = href.startsWith('http');
+
       return (
         <a
           href={href}
           target={target}
           rel={rel}
           className="text-blue-600 hover:text-blue-800 underline"
+          {...(isExternal && {
+            'data-umami-event': 'outbound-link',
+            'data-umami-event-url': href,
+          })}
         >
           {children}
         </a>
