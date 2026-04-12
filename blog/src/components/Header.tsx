@@ -50,6 +50,8 @@ export default function Header({ title = 'Blog' }: HeaderProps) {
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
               target="_blank"
               rel="noopener noreferrer"
+              data-umami-event="outbound-click"
+              data-umami-event-destination="terminal-site"
             >
               Terminal Site
             </a>
@@ -117,6 +119,8 @@ export default function Header({ title = 'Blog' }: HeaderProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
+                data-umami-event="outbound-click"
+                data-umami-event-destination="terminal-site"
               >
                 Terminal Site
               </a>

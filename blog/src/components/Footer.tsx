@@ -33,6 +33,8 @@ export default function Footer() {
               className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
               target="_blank"
               rel="noopener noreferrer"
+              data-umami-event="outbound-click"
+              data-umami-event-destination="terminal-site"
             >
               Terminal Site
             </a>
@@ -46,6 +48,8 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
+              data-umami-event="social-click"
+              data-umami-event-platform="github"
             >
               <svg
                 className="h-6 w-6"
@@ -66,6 +70,8 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
+              data-umami-event="social-click"
+              data-umami-event-platform="linkedin"
             >
               <svg
                 className="h-6 w-6"
